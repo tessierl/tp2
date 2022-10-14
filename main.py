@@ -1,16 +1,24 @@
 """
 Programme fait par Lucas Tessier
 Groupe 402
-Programme où le joueur choisit un nombre aléatoire entre 0 et 100 et le joueur
+Programme où le programme choisit un nombre aléatoire entre deux nombres que le joueur a choisit et le joueur
 doit deviner en un nombre d'essais indéfini le nombre
 """
 import random
+
+
+def nombre():
+    minimum = int(input("inscrivez un nombre :"))
+    maximum = int(input("Inscrivez un nombre plus grand :"))
+    return minimum, maximum
+
 
 boucle_jeu = True
 while boucle_jeu:
     nb_essai = 0
     tours = True
-    ordi = random.randint(0,100)
+    minimum, maximum = nombre()
+    ordi = random.randint(minimum, maximum)
     print("J’ai choisi un nombre au hasard entre 0 et 100. À vous de le deviner...")
     while tours:
         essai = int(input("Entrez votre essai :"))
